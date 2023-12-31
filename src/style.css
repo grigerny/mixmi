@@ -1,0 +1,269 @@
+body {
+    background: transparent; /* Make it white if you need */
+    color: #fcbe24;
+    padding: 0 24px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  /* Use a dark theme for the DJ panel background */
+  .dj-panel {
+    background: #333; /* Dark gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+    padding: 20px;
+    width: 800px;
+    margin: auto; /* Center the panel */
+  }
+  
+  .waveformright-container {
+    display: flex;
+    flex-direction: column; /* Stack waveforms vertically */
+    min-height:100%;
+    height:250px;
+    width:100%;
+}
+
+  /* Style for the turntable sections */
+  .turntable {
+    background: #222; /* Even darker background for contrast */
+    border-radius: 100%; /* Circular turntables */
+    width: 250px;
+    height: 250px;
+    box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.1); /* Inner shadow for depth */
+    margin: 20px;
+    position: relative; /* Position relative for absolute children elements */
+    display: inline-block; /* Display side-by-side */
+  }
+  
+  /* Style for the center labels on the turntables */
+  .turntable-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    background: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  /* Style for the BPM display */
+  .bpm-display {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px; /* Spacing above the display */
+  }
+  
+  /* Style for the play button */
+  .play-button {
+    background: #464646;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  
+  .tempo-slider {
+    -webkit-appearance: none;
+    height: 20%;
+    width: 50%; 
+    background: #000;
+    outline: none;
+    border: 5px solid lawngreen;
+    border-radius: 8px;
+    top: 40%;
+    transform: rotate(270deg);
+    
+  }
+
+  
+  /* for chrome/safari */
+  .tempo-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #000;
+    cursor: pointer;
+    border: 5px solid lawngreen;
+    border-radius: 4px;
+    top: 40%;
+    transform: rotate(270deg);
+  }
+  
+  /* for firefox */
+  .tempo-slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    background: #000;
+    cursor: pointer;
+    border: 5px solid lawngreen;
+    border-radius: 4px;
+   top: 40%;
+   transform: rotate(270deg);
+  }
+  /* Add similar styles for other slider thumbs for cross-browser compatibility */
+  
+  /* Style for the text and other labeling elements */
+  .label {
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;.upload-controls {
+      display: flex; /* Align children (input and button) in a row */
+  }
+
+/* Ensuring upload controls are in a row */
+.upload-controls {
+  display: flex;
+}
+
+.upload-controls input,
+.upload-controls button {
+  flex-grow: 1;  /* Adjust as needed, or set specific widths */
+  margin-right: 8px; /* Space between the input and button */
+}
+  
+.left-waveform-and-upload, .right-waveform-and-upload {
+      flex: 1; /* Each side takes half the width */
+      display: flex;
+      flex-direction: column; /* Stack upload controls and waveform vertically */
+      align-items: flex-start; /* Align to the left */
+}
+  
+  #waveformTrack1, #waveformTrack2 {
+      width: 100%; /* Take the full width of the container */
+      height: 100px; /* Adjust as needed */
+      /* Add other styles as needed */
+  }
+  
+  }
+  
+  .track-controls-container {
+    display: flex;
+    justify-content: space-between; /* Separate left and right controls */
+}
+
+.left-controls, .right-controls {
+  flex: 1; /* Each takes half the width */
+}
+
+.crossfader-container {
+  text-align: center; /* Center the crossfader */
+}
+
+body {
+  background: #000;
+  margin: 100px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 60px;
+  font-family: helvetica;
+  font-size: 56px;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 15px;
+  background: #000;
+  outline: none;
+  border: 5px solid lawngreen;
+  border-radius: 8px;
+}
+
+
+/* for chrome/safari */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 60px;
+  background: #000;
+  cursor: pointer;
+  border: 5px solid lawngreen;
+  border-radius: 4px;
+}
+
+/* for firefox */
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 60px;
+  background: #000;
+  cursor: pointer;
+  border: 5px solid lawngreen;
+  border-radius: 4px;
+}
+
+#album {
+  	position: relative;
+	height: 200px;
+	width: 200px;
+	max-height: 100%;
+	max-width: 100%;
+}
+#vinyl {
+    		position: relative;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-image: url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Music-PNG/Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png?m=1462983196');
+		background-size: 106% 106%;
+		background-position: center;
+		box-shadow: 0 0 20px 4px rgba(0,0,0,0.6);
+		border-radius: 50%;
+		content: '';
+		animation: 5s linear spinThat infinite, 1s ease-out getOut 1s forwards;
+		&::before {
+			position: absolute;
+			top: 2.5%;
+			left: 2.5%;
+			z-index: 10;
+			width: 95%;
+			height: 95%;
+			background-image: url('http://www.designresourcebox.com/ths/diverse/blacktextures/82267467.jpg');
+			background-size: 100% 100%;
+			border-radius: 50%;
+			mix-blend-mode: screen;
+			opacity: 0.3;
+			content: '';
+		}
+		#print {
+			position: absolute;
+			top: 33%;
+			left: 33%;
+			height: 34%;
+			width: 34%;
+			box-shadow: inset 0 0 0 5px rgba(150,150,150,0.5);
+			background-image: url('http://assets.teamrock.com/image/14d29742-c6f7-43f6-bbe1-6bf7b3b34c6f?w=800');
+	background-size: cover;
+			border-radius: 50%;
+		}
+}
+
+@keyframes spinThat {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

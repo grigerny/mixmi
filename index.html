@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+<div class="dj-panel">
+
+    <!-- Left Side -->
+    <div class="left-waveform-and-upload">
+        <div class="upload-controls">
+        <input type="file" id="fileInputLeft" accept="audio/*">
+    </div>
+    <div class="waveformleft-container">
+        <div id="waveformTrack1"></div> <!-- Waveform for Track 1 -->
+    </div>
+    </div>
+   
+
+    <!-- Right Side -->
+    <div class="right-waveform-and-upload">
+        <div class="upload-controls">
+            <input type="file" id="fileInputRight" accept="audio/*">
+            <div id="uploadButtonRight"></div>
+            </div>
+         <div class="waveformright-container">
+        <div id="waveformTrack2"></div> <!-- Waveform for Track 2 -->
+        </div>
+    </div>
+
+   
+
+    <!-- Container 2: Track Controls -->
+    <div class="track-controls-container">
+        
+   
+        <!-- Left Side Controls -->
+        <div class="left-controls">
+            <div id="uploadButtonLeft"></div>
+            <input type="range" class="tempo-slider" id="tempoSliderLeft" min="0.5" max="2" value="1" step="0.01">
+
+            <button class="play-button fas fas fa-step-backward" id="stopLeft"></button>
+            <button class="play-button fas fa-play" id="playLeft"></button>
+        </div>
+
+        <!-- Right Side Controls -->
+
+        <div class="right-controls">
+            <div class="uploadButtonRight"></div>
+            <button class="play-button fas fa-step-backward" id="stopRight"></button>
+            <button class="play-button fas fa-play" id="playRight"></button>
+            <input type="range" class="tempo-slider" id="tempoSliderRight" min="0.5" max="2" value="1" step="0.01">
+        </div>
+    </div>
+
+
+    <!-- Container 3: Cross-fader -->
+
+    
+    
+    <br><br>
+    <div>
+    <div class="crossfader-container">
+        <input type="range" id="crossfader" class="slider" min="0" max="100" value="50" step="10">
+    </div>
+    </div>
+</div>
+
+</div>
+
+
+    </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+<script src="https://unpkg.com/wavesurfer.js"></script> 
+<script src="https://kit.fontawesome.com/6ccefdb973.js" crossorigin="anonymous"></script>
+<script src="src/script.js"></script>
+
+</body>
+</html>
