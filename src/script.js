@@ -31,19 +31,36 @@ var wavesurferRight = WaveSurfer.create({
 
 
   // Event Listeners for Track Selectors
-document.getElementById('trackSelectLeft').addEventListener('change', function() {
-    var trackURL = this.value;
-    if(trackURL) {
-        loadTrack(trackURL, 'left');
+  document.addEventListener('DOMContentLoaded', function() {
+    var trackSelectLeft = document.getElementById('trackSelectLeft');
+    if(trackSelectLeft) {
+        trackSelectLeft.addEventListener('change', function() {
+            var trackURL = this.value;
+            if(trackURL) {
+                loadTrack(trackURL, 'left');
+            }
+        });
+    } else {
+        console.error("Element with ID 'trackSelectLeft' was not found.");
     }
 });
 
-document.getElementById('trackSelectRight').addEventListener('change', function() {
-    var trackURL = this.value;
-    if(trackURL) {
-        loadTrack(trackURL, 'right');
+  // Event Listeners for Track Selectors
+  document.addEventListener('DOMContentLoaded', function() {
+    var trackSelectRight = document.getElementById('trackSelectRight');
+    if(trackSelectRight) {
+        trackSelectRight.addEventListener('change', function() {
+            var trackURL = this.value;
+            if(trackURL) {
+                loadTrack(trackURL, 'right');
+            }
+        });
+    } else {
+        console.error("Element with ID 'trackSelectRight was not found.");
     }
 });
+
+
 
   // Event listener for the crossfader
 document.getElementById('crossfader').addEventListener('input', function () {
