@@ -28,19 +28,22 @@ var wavesurferRight = WaveSurfer.create({
     backend: 'WebAudio' // Use the WebAudio backend
 });
 
-// Event Listeners for Upload Buttons & File Loaders for Left and Right Tracks
-document.getElementById('uploadButtonLeft').addEventListener('click', function() {
-    document.getElementById('fileInputLeft').click();
-  });
-  document.getElementById('fileInputLeft').addEventListener('change', function(event) {
-    loadTrack(event.target, 'left');
-  });
-  document.getElementById('uploadButtonRight').addEventListener('click', function() {
-    document.getElementById('fileInputRight').click();
-  });
-  document.getElementById('fileInputRight').addEventListener('change', function(event) {
-    loadTrack(event.target, 'right');
-  });
+
+
+  // Event Listeners for Track Selectors
+document.getElementById('trackSelectLeft').addEventListener('change', function() {
+    var trackURL = this.value;
+    if(trackURL) {
+        loadTrack(trackURL, 'left');
+    }
+});
+
+document.getElementById('trackSelectRight').addEventListener('change', function() {
+    var trackURL = this.value;
+    if(trackURL) {
+        loadTrack(trackURL, 'right');
+    }
+});
 
   // Event listener for the crossfader
 document.getElementById('crossfader').addEventListener('input', function () {
@@ -69,11 +72,8 @@ function crossfade(value) {
 }
 
 // Function to handle the file upload and create a Howl instance for Left and Right tracks
-function loadTrack(fileInput, side) {
-    var files = fileInput.files;
-    if (files.length > 0) { 
-        var file = URL.createObjectURL(files[0]); // Create an object URL for the file
-            
+function loadTrack(trackURL, side) {
+    if (trackURL) {             
         // Determine which track to load based on the side and unload or stop the current sound if it exists
          if (side === 'left') {
             if (soundLeft) {
@@ -81,13 +81,15 @@ function loadTrack(fileInput, side) {
                 }
                 console.log("Reset Left Track");
                 soundLeft = new Howl({
-                    src: [file],
+                    src: [trackURL],
                     format: ['mp3', 'ogg', 'wav'], // Include formats as needed
                     html5: true, // Depending on your needs
+                    autoplay: true,
                     // other Howl options...
                 });
                 console.log("Left Track Successfully Loaded");
-                wavesurferLeft.load(file); // Load the track into Wavesurfer for visualization
+                wavesurferLeft.load(trackURL); // Load the track into Wavesurfer for visualization
+                wavesurferLeft.play();
                 console.log("Left Waveform Successfully Loaded");
             
             } else if (side === 'right') {
@@ -96,13 +98,15 @@ function loadTrack(fileInput, side) {
                 }
                 console.log("Reset Right Track");
                 soundRight = new Howl({
-                    src: [file],
+                    src: [trackURL],
                     format: ['mp3', 'ogg', 'wav'], // Include formats as needed
                     html5: true, // Depending on your needs
+                    autoplay: true,
                     // other Howl options...
                 });
                 console.log("Right Track Successfully Loaded");
-                wavesurferRight.load(file); // Load the track into Wavesurfer for visualization
+                wavesurferRight.load(trackURL); // Load the track into Wavesurfer for visualization
+                wavesurferRight.play();
                 console.log("Right Waveform Successfully Loaded");
             }
        

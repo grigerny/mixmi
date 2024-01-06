@@ -9,10 +9,29 @@
 
 <div class="dj-panel">
 
+    <!-- Left Track Selector -->
+<div class="track-selector">
+    <select id="trackSelectLeft">
+        <option value="">Select a track...</option>
+        <option value="src/CouldUBe (Charles Original Mix) - All - 80BPM.mp3">Track 1</option>
+        <option value="src/CouldUBe (Merlin Cop Show) - All - 80 BPM-.mp3">Track 2</option>
+        <!-- Add more options here -->
+    </select>
+</div>
+
+<!-- Right Track Selector -->
+<div class="track-selector">
+    <select id="trackSelectRight">
+        <option value="">Select a track...</option>
+        <option value="src/CouldUBe (Charles Original Mix) - All - 80BPM.mp3">Track 1</option>
+        <option value="src/CouldUBe (Merlin Cop Show) - All - 80 BPM-.mp3">Track 2</option>
+        <!-- Add more options here -->
+    </select>
+</div>
+
     <!-- Left Side -->
     <div class="left-waveform-and-upload">
         <div class="upload-controls">
-        <input type="file" id="fileInputLeft" accept="audio/*">
     </div>
     <div class="waveformleft-container">
         <div id="waveformTrack1"></div> <!-- Waveform for Track 1 -->
@@ -23,7 +42,6 @@
     <!-- Right Side -->
     <div class="right-waveform-and-upload">
         <div class="upload-controls">
-            <input type="file" id="fileInputRight" accept="audio/*">
             <div id="uploadButtonRight"></div>
             </div>
          <div class="waveformright-container">
