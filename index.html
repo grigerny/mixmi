@@ -9,7 +9,8 @@
 
 <div class="dj-panel">
 
-    <!-- Left Track Selector -->
+    <!-- Left Side -->
+        <!-- Left Track Selector -->
 <div class="track-selector">
     <select id="trackSelectLeft">
         <option value="">Select a track...</option>
@@ -18,18 +19,6 @@
         <!-- Add more options here -->
     </select>
 </div>
-
-<!-- Right Track Selector -->
-<div class="track-selector">
-    <select id="trackSelectRight">
-        <option value="">Select a track...</option>
-        <option value="src/CouldUBe (Charles Original Mix) - All - 80BPM.mp3">Track 1</option>
-        <option value="src/CouldUBe (Merlin Cop Show) - All - 80 BPM-.mp3">Track 2</option>
-        <!-- Add more options here -->
-    </select>
-</div>
-
-    <!-- Left Side -->
     <div class="left-waveform-and-upload">
         <div class="upload-controls">
     </div>
@@ -40,6 +29,15 @@
    
 
     <!-- Right Side -->
+    <!-- Right Track Selector -->
+<div class="track-selector">
+    <select id="trackSelectRight">
+        <option value="">Select a track...</option>
+        <option value="src/CouldUBe (Charles Original Mix) - All - 80BPM.mp3">Track 1</option>
+        <option value="src/CouldUBe (Merlin Cop Show) - All - 80 BPM-.mp3">Track 2</option>
+        <!-- Add more options here -->
+    </select>
+</div>
     <div class="right-waveform-and-upload">
         <div class="upload-controls">
             <div id="uploadButtonRight"></div>
@@ -48,8 +46,6 @@
         <div id="waveformTrack2"></div> <!-- Waveform for Track 2 -->
         </div>
     </div>
-
-   
 
     <!-- Container 2: Track Controls -->
     <div class="track-controls-container">
@@ -73,23 +69,16 @@
             <input type="range" class="tempo-slider" id="tempoSliderRight" min="0.5" max="2" value="1" step="0.01">
         </div>
     </div>
-
-
     <!-- Container 3: Cross-fader -->
-
-    
-    
     <br><br>
     <div>
     <div class="crossfader-container">
-        <input type="range" id="crossfader" class="slider" min="0" max="100" value="50" step="10">
+        <input type="range" id="crossfader" class="slider" min="0" max="100" value="50" step="1">
     </div>
     </div>
 </div>
 
 </div>
-
-
     </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
